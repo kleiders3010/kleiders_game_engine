@@ -52,7 +52,8 @@ java {
 	withJavadocJar()
 }
 
-repositories {
+
+repositories {
   mavenCentral()
 }
 
@@ -77,11 +78,6 @@ task deobfJar(type: Jar) {
     	attributes("FMLCorePlugin": "info.u_team.u_team_core.intern.libaryloader.LibaryLoader", "FMLCorePluginContainsFMLMod": "true")
 	}	
 }
-
-artifacts {
-    archives deobfJar
-}
-
 
 publishing {
     publications {

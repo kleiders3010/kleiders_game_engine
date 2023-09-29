@@ -47,6 +47,11 @@ minecraft {
     }
 }
 
+java {
+	withSourcesJar()
+	withJavadocJar()
+}
+
 repositories {
   mavenCentral()
 }

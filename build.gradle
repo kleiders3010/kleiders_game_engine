@@ -60,11 +60,34 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
 }
 
-artifacts { archives jar }
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    
+    from "LICENSE"
+    
+    archiveFileName = archivesBaseName + "-" + "1.20.1" + "-v" + version + "-dev.jar"
+    
+    manifest.mainAttributes(
+       	"Implementation-Title": "KleidersGameEngine",
+    	"Implementation-Version": version,
+		"Built-On": "1.20.1"
+	)
+	
+	manifest {
+    	attributes("FMLCorePlugin": "info.u_team.u_team_core.intern.libaryloader.LibaryLoader", "FMLCorePluginContainsFMLMod": "true")
+	}	
+}
+
+artifacts {
+    archives deobfJar
+    archives jar
+}
+
+
 publishing {
     publications {
         maven(MavenPublication) {
-		artifact jar // Use the customJar task as the publication source
+		artifact deobfJar // Use the customJar task as the publication source
 		from components.java
         }
     }

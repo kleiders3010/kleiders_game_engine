@@ -1,3 +1,9 @@
+buildscript {
+    configurations.classpath {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
 plugins {
 	id 'maven-publish'
     id 'eclipse'

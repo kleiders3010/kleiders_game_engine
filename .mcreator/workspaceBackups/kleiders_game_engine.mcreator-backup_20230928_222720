@@ -16,6 +16,7 @@
     {
       "name": "GameScene",
       "type": "overlay",
+      "sortid": 5,
       "compiles": true,
       "locked_code": true,
       "registry_name": "game_scene",
@@ -77,10 +78,10 @@
   "workspaceSettings": {
     "modid": "kleiders_game_engine",
     "modName": "Kleiders Game Engine",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "uri_l, MCreator",
     "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "license": "MIT License",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
@@ -88,6 +89,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "com.kleiders.gameengine",
     "lockBaseModFiles": false
   },

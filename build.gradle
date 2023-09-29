@@ -1,9 +1,3 @@
-buildscript {
-    configurations.classpath {
-        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-    }
-}
-
 plugins {
 	id 'maven-publish'
     id 'eclipse'
@@ -53,6 +47,11 @@ minecraft {
     }
 }
 
+task customJar(type: Jar) {
+    dependsOn 'jar' // Make the custom task depend on the 'jar' task
+    from sourceSets.main.output // Specify the source for your custom JAR
+}
+
 java {
 	withSourcesJar()
 	withJavadocJar()
@@ -70,6 +69,7 @@ publishing {
     publications {
         maven(MavenPublication) {
 		from components.java
+		artifact customJar // Use the customJar task as the publication source
         }
     }
 }

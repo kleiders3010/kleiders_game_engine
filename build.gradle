@@ -49,7 +49,8 @@ minecraft {
 
 task customJar(type: Jar) {
     dependsOn 'jar' // Make the custom task depend on the 'jar' task
-    from sourceSets.main // Specify the source for your custom JAR
+    mustRunAfter 'reobfJar'
+    from sourceSets.main.output // Specify the source for your custom JAR
 }
 
 java {

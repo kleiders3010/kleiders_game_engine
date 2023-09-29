@@ -32,7 +32,7 @@ public class GameObject {
 	public static List<GameObject> scheduledDiscard = new ArrayList<>();
 	public static List<GameObject> scheduledAddition = new ArrayList<>();
 	public static GuiGraphics graphics;
-	public static float globalScale = 1.75f;
+	public static float globalScale = 1.751f;
 	public List<GameObject> objectsCollided = new ArrayList<>();
 	public List<String> colliders = new ArrayList<>();
 	public int x, y, width, height, visualWidth, visualHeight, visualXOffset, visualYOffset = 0;

@@ -47,12 +47,6 @@ minecraft {
     }
 }
 
-task customJar(type: Jar) {
-    dependsOn 'jar' // Make the custom task depend on the 'jar' task
-    mustRunAfter 'reobfJar'
-    from sourceSets.main.output // Specify the source for your custom JAR
-}
-
 java {
 	withSourcesJar()
 	withJavadocJar()
@@ -65,11 +59,12 @@ java {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
 }
-artifacts { archives customJar }
+
+artifacts { archives jar }
 publishing {
     publications {
         maven(MavenPublication) {
-		artifact customJar // Use the customJar task as the publication source
+		artifact jar // Use the customJar task as the publication source
 		from components.java
         }
     }

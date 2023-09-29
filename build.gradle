@@ -82,8 +82,7 @@ task deobfJar(type: Jar) {
 publishing {
     publications {
         maven(MavenPublication) {
-		artifact deobfJar // Use the customJar task as the publication source
-		from components.java
+		artifact deobfJar // Use the customJar task as the publication 
         }
     }
 }

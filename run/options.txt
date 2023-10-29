@@ -5,7 +5,7 @@ autoSuggestions:true
 chatColors:true
 chatLinks:true
 chatLinksPrompt:true
-enableVsync:false
+enableVsync:true
 entityShadows:true
 forceUnicodeFont:false
 discrete_mouse_scroll:false
@@ -32,7 +32,7 @@ damageTiltStrength:1.0
 highContrast:false
 gamma:0.5
 renderDistance:5
-simulationDistance:12
+simulationDistance:8
 entityDistanceScaling:1.0
 guiScale:4
 particles:0
@@ -75,7 +75,7 @@ glDebugVerbosity:1
 skipMultiplayerWarning:false
 skipRealms32bitWarning:false
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 hideBundleTutorial:false
 syncChunkWrites:true
 showAutosaveIndicator:true

@@ -15,11 +15,11 @@
 package com.kleiders.gameengine;
 
 public class PlayerObject extends GameObject {
-	public PlayerObject(int x, int y, int width, int height, String type, GameObject parent) {
-		super(x, y, width, height, type, parent);
+	public PlayerObject(int x, int y, int width, int height, String type, GameScene scene) {
+		super(x, y, width, height, type, scene);
 		this.colliders.add("rock");
 		this.colliders.add("pickaxe");
-		this.speed = 0.05;
+		this.speed = 1;
 	}
 
 	@Override
@@ -30,7 +30,8 @@ public class PlayerObject extends GameObject {
 	@Override
 	public void objectCollide(GameObject otherObject) {
 		if (!(otherObject instanceof PickaxeObject) && otherObject.type == "pickaxe") {
-			GameObject pickaxe = new PickaxeObject(8, 0, width, height, "pickaxe", this);
+			GameObject pickaxe = new PickaxeObject(8, 0, width, height, "pickaxe", this.scene);
+			pickaxe.setParent(this);
 			pickaxe.visualHeight = 4;
 			pickaxe.visualWidth = 4;
 			pickaxe.visualYOffset = 3;
@@ -39,18 +40,23 @@ public class PlayerObject extends GameObject {
 	}
 
 	@Override
-	public void partialMove() {
-		if (Controls.leftKey) {
-			this.direction = "left";
-		} else if (Controls.rightKey) {
-			this.direction = "right";
-		} else if (Controls.upKey) {
-			this.direction = "up";
-		} else if (Controls.downKey) {
-			this.direction = "down";
+	public void move() {
+		if (GameControls.isKeyPressed("A")) {
+			this.setVelocityX(-speed);
+			this.setVelocityY(0);
+		} else if (GameControls.isKeyPressed("D")) {
+			this.setVelocityX(speed);
+			this.setVelocityY(0);
+		} else if (GameControls.isKeyPressed("W")) {
+			this.setVelocityX(0);
+			this.setVelocityY(-speed);
+		} else if (GameControls.isKeyPressed("S")) {
+			this.setVelocityX(0);
+			this.setVelocityY(speed);
 		} else {
-			this.direction = "";
+			this.setVelocityX(0);
+			this.setVelocityY(0);
 		}
-		super.partialMove();
+		super.move();
 	}
 }

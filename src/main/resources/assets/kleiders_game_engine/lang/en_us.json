@@ -1,1 +1,4 @@
-{}
+{
+  "item.kleiders_game_engine.start_game": "Start Game",
+  "block.kleiders_game_engine.block_clicked": "Block Clicked"
+}

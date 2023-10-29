@@ -15,8 +15,8 @@
 package com.kleiders.gameengine;
 
 public class PickaxeObject extends GameObject {
-	public PickaxeObject(int x, int y, int width, int height, String type, GameObject parent) {
-		super(x, y, width, height, type, parent);
+	public PickaxeObject(int x, int y, int width, int height, String type, GameScene scene) {
+		super(x, y, width, height, type, scene);
 		this.colliders.add("rock");
 	}
 
@@ -35,7 +35,5 @@ public class PickaxeObject extends GameObject {
 		if (otherObject.type == "rock") {
 			otherObject.discard();
 		}
-		System.out.println(GameObject.scheduledDiscard);
 	}
-
 }

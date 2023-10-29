@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kleiders_game_engine:block/block_clicked"
+    }
+  }
+}

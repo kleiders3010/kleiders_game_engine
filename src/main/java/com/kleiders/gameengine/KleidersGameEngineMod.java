@@ -38,6 +38,10 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import com.kleiders.gameengine.init.KleidersGameEngineModTabs;
+import com.kleiders.gameengine.init.KleidersGameEngineModItems;
+import com.kleiders.gameengine.init.KleidersGameEngineModBlocks;
+
 @Mod("kleiders_game_engine")
 public class KleidersGameEngineMod {
 	public static final Logger LOGGER = LogManager.getLogger(KleidersGameEngineMod.class);
@@ -46,6 +50,12 @@ public class KleidersGameEngineMod {
 	public KleidersGameEngineMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		KleidersGameEngineModBlocks.REGISTRY.register(bus);
+
+		KleidersGameEngineModItems.REGISTRY.register(bus);
+
+		KleidersGameEngineModTabs.REGISTRY.register(bus);
 
 	}
 

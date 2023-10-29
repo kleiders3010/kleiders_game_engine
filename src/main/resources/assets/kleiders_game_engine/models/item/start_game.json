@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "kleiders_game_engine:item/pickaxe"
+  }
+}

@@ -15,7 +15,7 @@
 package com.kleiders.gameengine;
 
 public class PlayerObject extends GameObject {
-	public PlayerObject(int x, int y, int width, int height, String type, GameScene scene) {
+	public PlayerObject(float x, float y, float width, float height, String type, GameScene scene) {
 		super(x, y, width, height, type, scene);
 		this.colliders.add("rock");
 		this.colliders.add("pickaxe");

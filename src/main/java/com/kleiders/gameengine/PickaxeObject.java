@@ -15,7 +15,7 @@
 package com.kleiders.gameengine;
 
 public class PickaxeObject extends GameObject {
-	public PickaxeObject(int x, int y, int width, int height, String type, GameScene scene) {
+	public PickaxeObject(float x, float y, float width, float height, String type, GameScene scene) {
 		super(x, y, width, height, type, scene);
 		this.colliders.add("rock");
 	}

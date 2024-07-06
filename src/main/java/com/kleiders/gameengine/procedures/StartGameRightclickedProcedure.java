@@ -14,6 +14,7 @@ public class StartGameRightclickedProcedure {
 		if (world.isClientSide()) {
 			int tileSize = 8;
 			GameScene scene = new GameScene("scene_test");
+			scene.scale = 3f;
 			GameControls.cancelPlayerMovement = true;
 			scene.active = true;
 			new GameObject(0 * tileSize, 0 * tileSize, 8, 8, "rock", scene);
@@ -22,7 +23,6 @@ public class StartGameRightclickedProcedure {
 			new GameObject(6 * tileSize, 3 * tileSize, 8, 8, "pickaxe", scene);
 			new PlayerObject(1 * tileSize, 1 * tileSize, 8, 8, "player", scene);
 			new PlayerObject(-12 * tileSize, 1 * tileSize, 8, 8, "player", scene);
-			scene.scale = 2f;
 		}
 	}
 }

@@ -4,7 +4,7 @@
       "name": "GameObject",
       "type": "code",
       "sortid": 2,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "game_object",
       "metadata": {
@@ -65,8 +65,7 @@
         "files": [
           "src/main/java/com/kleiders/gameengine/client/screens/MinigameOverlay.java"
         ]
-      },
-      "path": "~/test"
+      }
     },
     {
       "name": "GameScene",
@@ -89,9 +88,6 @@
       "locked_code": false,
       "registry_name": "start_game_rightclicked",
       "metadata": {
-        "files": [
-          "src/main/java/com/kleiders/gameengine/procedures/StartGameRightclickedProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "world",
@@ -126,9 +122,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/kleiders_game_engine/blockstates/block_clicked.json",
-          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json",
           "src/main/resources/assets/kleiders_game_engine/models/block/block_clicked.json",
-          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java"
+          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java",
+          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json"
         ]
       },
       "path": "~/test"
@@ -202,5 +198,5 @@
     "modElementsPackage": "com.kleiders.gameengine",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }

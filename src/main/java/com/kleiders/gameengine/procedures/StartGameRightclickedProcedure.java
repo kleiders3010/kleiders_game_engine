@@ -21,6 +21,7 @@ public class StartGameRightclickedProcedure {
 			new GameObject(1 * tileSize, 3 * tileSize, 8, 8, "rock", scene);
 			new GameObject(6 * tileSize, 3 * tileSize, 8, 8, "pickaxe", scene);
 			new PlayerObject(1 * tileSize, 1 * tileSize, 8, 8, "player", scene);
+			new PlayerObject(-12 * tileSize, 1 * tileSize, 8, 8, "player", scene);
 			scene.scale = 2f;
 		}
 	}

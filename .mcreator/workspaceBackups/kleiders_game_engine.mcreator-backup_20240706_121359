@@ -4,7 +4,7 @@
       "name": "GameObject",
       "type": "code",
       "sortid": 2,
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "game_object",
       "metadata": {
@@ -126,9 +126,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/kleiders_game_engine/blockstates/block_clicked.json",
-          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json",
           "src/main/resources/assets/kleiders_game_engine/models/block/block_clicked.json",
-          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java"
+          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java",
+          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json"
         ]
       },
       "path": "~/test"
@@ -202,5 +202,5 @@
     "modElementsPackage": "com.kleiders.gameengine",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }

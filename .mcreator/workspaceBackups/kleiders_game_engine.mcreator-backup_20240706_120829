@@ -126,9 +126,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/kleiders_game_engine/blockstates/block_clicked.json",
-          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json",
           "src/main/resources/assets/kleiders_game_engine/models/block/block_clicked.json",
-          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java"
+          "src/main/java/com/kleiders/gameengine/block/BlockClickedBlock.java",
+          "src/main/resources/assets/kleiders_game_engine/models/item/block_clicked.json"
         ]
       },
       "path": "~/test"

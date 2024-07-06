@@ -1,13 +1,12 @@
 plugins {
-	id 'maven-publish'
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = '1.0'
 group = 'com.yourname.modid'
 archivesBaseName = 'modid'
-group = 'com.github.kleiders3010'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -47,45 +46,25 @@ minecraft {
     }
 }
 
-java {
-	withSourcesJar()
-	withJavadocJar()
-}
-
-
-repositories {
-  mavenCentral()
-}
-
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    
-    from "LICENSE"
-    
-    archiveFileName = archivesBaseName + "-" + "1.20.1" + "-v" + version + "-dev.jar"
-    
-    manifest.mainAttributes(
-       	"Implementation-Title": "KleidersGameEngine",
-    	"Implementation-Version": version,
-		"Built-On": "1.20.1"
-	)
-	
-	manifest {
-    	attributes("FMLCorePlugin": "info.u_team.u_team_core.intern.libaryloader.LibaryLoader", "FMLCorePluginContainsFMLMod": "true")
-	}	
+mixin {
+    add sourceSets.main, 'mixins.kleiders_game_engine.refmap.json'
+
+    config 'mixins.kleiders_game_engine.json'
+
+    debug.verbose = true
+    debug.export = true
+    dumpTargetOnFailure = true
+
+    quiet
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-		artifact deobfJar // Use the customJar task as the publication 
-        }
-    }
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
 apply from: 'mcreator.gradle'
-

@@ -6,8 +6,8 @@ license="MIT License"
 modId="kleiders_game_engine"
 version="0.1.0"
 displayName="Kleiders Game Engine"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="uri_l, MCreator"
 
 [[dependencies.kleiders_game_engine]]

@@ -60,7 +60,7 @@ public class GameObject {
 
 	public void render() {
 		float finalScale = this.scene.scale * this.scale * this.getGuiScale();
-		int ww = (int) (Minecraft.getInstance().getWindow().getGuiScaledWidth() / (2 * finalScale));
+		int ww = (int) Minecraft.getInstance().getWindow().getGuiScaledWidth() / (2 * finalScale));
 		int wh = (int) (Minecraft.getInstance().getWindow().getGuiScaledHeight() / (2 * finalScale));
 		int x = (int) this.getX() + this.visualXOffset;
 		int y = (int) this.getY() + this.visualYOffset;

@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "com.kleiders.gameengine.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.kleiders_game_engine.refmap.json",
+  "mixins": [],
+  "client": [],
+  "minVersion": "0.8"
+}

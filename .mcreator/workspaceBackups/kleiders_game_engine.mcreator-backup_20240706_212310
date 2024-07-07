@@ -65,8 +65,7 @@
         "files": [
           "src/main/java/com/kleiders/gameengine/client/screens/MinigameOverlay.java"
         ]
-      },
-      "path": "~/test"
+      }
     },
     {
       "name": "GameScene",

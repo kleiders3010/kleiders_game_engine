@@ -18,6 +18,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import java.util.List;
+import java.util.Comparator;
 import java.util.ArrayList;
 
 public class GameScene {
@@ -56,6 +57,12 @@ public class GameScene {
 		}
 		scheduledDiscard = new ArrayList<>();
 		scheduledAddition = new ArrayList<>();
+		objects.sort(new Comparator<GameObject>() {
+			@Override
+			public int compare(GameObject o1, GameObject o2) {
+				return Integer.compare(o1.drawLate, o2.drawLate);
+			}
+		});
 		currentTime = System.nanoTime();
 		long elapsedTime = currentTime - lastTime;
 		accumulatedTime += elapsedTime;

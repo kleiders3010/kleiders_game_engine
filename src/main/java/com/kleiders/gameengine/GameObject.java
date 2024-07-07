@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GameObject {
+	public int drawLate = 0;
 	public GuiGraphics graphics;
 	public List<GameObject> objectsCollided = new ArrayList<>();
 	public List<String> colliders = new ArrayList<>();

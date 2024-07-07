@@ -2,7 +2,7 @@ package com.kleiders.gameengine.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
 
-import com.kleiders.gameengine.PlayerObject;
+import com.kleiders.minigames.GrassObject;
 import com.kleiders.gameengine.KleidersGameEngineMod;
 import com.kleiders.gameengine.GameScene;
 import com.kleiders.gameengine.GameObject;
@@ -17,12 +17,11 @@ public class StartGameRightclickedProcedure {
 			scene.scale = 3f;
 			GameControls.cancelPlayerMovement = true;
 			scene.active = true;
-			new GameObject(0 * tileSize, 0 * tileSize, 8, 8, "rock", scene);
-			new GameObject(1 * tileSize, 2 * tileSize, 8, 8, "rock", scene);
-			new GameObject(1 * tileSize, 3 * tileSize, 8, 8, "rock", scene);
-			new GameObject(6 * tileSize, 3 * tileSize, 8, 8, "pickaxe", scene);
-			new PlayerObject(1 * tileSize, 1 * tileSize, 8, 8, "player", scene);
-			new PlayerObject(-12 * tileSize, 1 * tileSize, 8, 8, "player", scene);
+			new GrassObject(0 * tileSize, 0 * tileSize, scene);
+			for (int index0 = -20; index0 < 20; index0++) {
+				new GameObject(index0 * (tileSize * 2), tileSize, 8, 8, "dirt_0", scene);
+				new GameObject(-8 + (index0 * (tileSize * 2)), tileSize, 8, 8, "dirt_1", scene);
+			}
 		}
 	}
 }

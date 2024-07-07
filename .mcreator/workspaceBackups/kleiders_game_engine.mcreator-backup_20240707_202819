@@ -4,7 +4,7 @@
       "name": "GameObject",
       "type": "code",
       "sortid": 2,
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "game_object",
       "metadata": {
@@ -88,6 +88,9 @@
       "locked_code": false,
       "registry_name": "start_game_rightclicked",
       "metadata": {
+        "files": [
+          "src/main/java/com/kleiders/gameengine/procedures/StartGameRightclickedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "world",

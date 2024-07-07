@@ -88,6 +88,9 @@
       "locked_code": false,
       "registry_name": "start_game_rightclicked",
       "metadata": {
+        "files": [
+          "src/main/java/com/kleiders/gameengine/procedures/StartGameRightclickedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "world",

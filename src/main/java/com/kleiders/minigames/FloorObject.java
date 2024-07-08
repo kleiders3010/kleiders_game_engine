@@ -14,8 +14,8 @@ public class FloorObject extends GameObject {
     public void move() {
         this.setVelocityX(-0.4f);
         super.move();
-        if (this.getX() < -256) {
-            new FloorObject(240, this.getY(), 8, 8, this.type, this.scene);
+        if (this.getX() < -128) {
+            new FloorObject(128, this.getY(), 8, 8, this.type, this.scene);
             this.discard();
         }
     }

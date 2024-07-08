@@ -40,8 +40,8 @@ public class GameObject {
 
 	public GameObject(float x, float y, float width, float height, String type, GameScene scene) {
 		this.scene = scene;
-		this.x = x * this.scene.scale;
-		this.y = y * this.scene.scale;
+		this.x = x;
+		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.visualWidth = width;
@@ -53,9 +53,6 @@ public class GameObject {
 
 	//Handles rendering and movement
 	public void rawTick() {
-		float finalScale = this.scene.scale;
-		this.width = this.visualWidth * finalScale;
-		this.height = this.visualHeight * finalScale;
 		oldX = this.getX();
 		oldY = this.getY();
 		this.move();
@@ -69,7 +66,7 @@ public class GameObject {
 		float x = this.getX() + this.visualXOffset;
 		float y = this.getY() + this.visualYOffset;
 		this.graphics.pose().pushPose();
-		this.graphics.pose().translate((ww / 2) + (x), (wh / 2) + (y), 0);
+		this.graphics.pose().translate((ww / 2) + (x * finalScale), (wh / 2) + (y * finalScale), 0);
 		this.graphics.pose().scale(finalScale, finalScale, finalScale);
 		this.graphics.blit(texture, 0, 0, 0, 0, (int) this.visualWidth, (int) this.visualHeight, (int) this.visualWidth, (int) this.visualHeight);
 		this.graphics.pose().popPose();
@@ -95,7 +92,7 @@ public class GameObject {
 	private void partialMove() {
 		this.setX(x + velocityX);
 		this.setY(y + velocityY);
-		if (velocityX != 0 || velocityY != 0) {
+		if ((velocityX != 0 || velocityY != 0) && this.canCollide()) {
 			this.handleCollision();
 		}
 	}

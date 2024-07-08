@@ -19,6 +19,8 @@ public class RunnerPlayerObject extends GameObject {
         this.colliders.add("arrow");
         this.speed = 1;
         this.texture = new ResourceLocation("kleiders_game_engine:textures/screens/player_walk_0.png");
+        this.width = 9;
+        this.visualXOffset = -3.15f;
         this.drawLate = 2;
     }
 
@@ -34,15 +36,19 @@ public class RunnerPlayerObject extends GameObject {
         }
     }
 
-    private final float gravity = 0.175f;
+    private final float gravity = 0.1f;
 
     @Override
     public void move() {
+        if (GameControls.isKeyPressed("A")) {
+            this.setVelocityX(-1f);
+        }
+        if (GameControls.isKeyPressed("D")) {
+            this.setVelocityX(1f);
+        }
         if (GameControls.isKeyPressed("W") && this.onGround) {
-            this.setVelocityX(0);
-            this.setVelocityY(-4.5f);
+            this.setVelocityY(-2.5f);
         } else if (GameControls.isKeyPressed("S")) {
-            this.setVelocityX(0);
             this.setVelocityY(this.velocityY + (gravity * 1.5f));
         }
         if (this.velocityY < 3.25f) {

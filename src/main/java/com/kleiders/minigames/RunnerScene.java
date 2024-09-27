@@ -19,7 +19,7 @@ public class RunnerScene extends GameScene {
 		new GrassObject(0 * tileSize, 0 * tileSize, this);
 		//Roof
 		for (int index1 = -7; index1 < -6; index1++) {
-			for (int index0 = -8; index0 < 8; index0++) {
+			for (int index0 = -8; index0 < 9; index0++) {
 				if (index1 % 2 == 0) {
 					new FloorObject(-8 + (index0 * (tileSize * 2)), tileSize * index1, 8, 8, "nograss_dirt_0", this);
 					new FloorObject((index0 * (tileSize * 2)), tileSize * index1, 8, 8, "nograss_dirt_1", this);
@@ -32,7 +32,7 @@ public class RunnerScene extends GameScene {
 		//Roof End
 		//Middle
 		for (int index1 = -6; index1 < 1; index1++) {
-			for (int index0 = -8; index0 < 8; index0++) {
+			for (int index0 = -8; index0 < 9; index0++) {
 				if (index1 % 2 == 0) {
 					new GameObject(-8 + (index0 * (tileSize * 2)), tileSize * index1, 8, 8, "blank", this);
 					new GameObject((index0 * (tileSize * 2)), tileSize * index1, 8, 8, "blank", this);
@@ -44,7 +44,7 @@ public class RunnerScene extends GameScene {
 		}
 		//Middle End
 		//Floor
-		for (int index0 = -8; index0 < 8; index0++) {
+		for (int index0 = -8; index0 < 9; index0++) {
 			new FloorObject(index0 * (tileSize * 2), tileSize, 8, 8, "dirt_0", this);
 			new FloorObject(-8 + (index0 * (tileSize * 2)), tileSize, 8, 8, "dirt_1", this);
 		}
